@@ -1,0 +1,41 @@
+name: IGLite
+options:
+  bundleIdPrefix: com.luca
+  deploymentTarget:
+    iOS: "16.0"
+
+targets:
+  IGLite:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: Resources
+        buildPhase: resources
+    info:
+      path: IGLite-Info.plist
+      properties:
+        CFBundleDisplayName: Lite
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        NSCameraUsageDescription: Per pubblicare foto e storie.
+        NSPhotoLibraryUsageDescription: Per scegliere foto da pubblicare.
+        NSMicrophoneUsageDescription: Per registrare video e messaggi vocali.
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.luca.iglite
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+        CODE_SIGN_STYLE: Automatic
+
+schemes:
+  IGLite:
+    build:
+      targets:
+        IGLite: all
+    run:
+      config: Debug
+    archive:
+      config: Release
